@@ -40,7 +40,7 @@
 
 SwaHealthy is a multilingual, offline-capable Progressive Web App (PWA) that helps rural and semi-urban residents in Andhra pradesh check their symptoms, receive first-aid guidance, and find the nearest government health facility — all in their preferred language.
 
-An independent project designed and built by **Pratyush**.
+An independent project designed and built by **Jahnavi**.
 
 ---
 
