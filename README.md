@@ -1,5 +1,5 @@
 # SwaHealthy 🏥
-### Rural Health Companion for West Bengal
+### Rural Health Companion for Andhra pradesh people
 
 > Multilingual symptom checker with AI health assistant, mental wellness tools, and GPS-based facility finder — in Bengali, Hindi & English. Works offline.
 
@@ -50,7 +50,7 @@ An independent project designed and built by **Pratyush**.
 |---------|-------|
 | 🏥 **Health Conditions** | 20+ |
 | 🔍 **Symptoms Database** | 40+ |
-| 🗺️ **West Bengal Facilities** | 10+ |
+| 🗺️ **Andhra predesh Facilities** | 10+ |
 | 👨‍⚕️ **Sample Doctors** | 5+ |
 | 🌍 **Languages Supported** | 3 (EN, BN, HI) |
 | 📱 **Responsive Design** | Mobile-First |
@@ -318,12 +318,4 @@ You are free to use, modify, and distribute this project, as long as you include
 - **Groq** — AI Assistant API
 - **OpenRouter** — Vision Model Integration
 - **OpenStreetMap & Leaflet** — Mapping Services
-- **West Bengal Health Department** — Public Health Data
-
----
-
-## 📧 Contact & Support
-
-For questions, feedback, or bug reports, please open an issue on [GitHub](https://github.com/pauldev-hub/swahealthy/issues).
-
-**Created with ❤️ for rural health in West Bengal**
+- **Andhra Pradesh Health Department** — Public Health Data
