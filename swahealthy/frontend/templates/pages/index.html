@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-container home-page">
+    <section class="home-hero">
+        <div class="home-hero-copy">
+            <span class="home-badge" data-i18n="daily_health_check">Daily Health Check</span>
+            <div class="home-greeting-bar">
+                <span class="home-greeting-kicker" data-i18n="check_in">Check-in</span>
+                <div class="home-greeting-title">{{ first_name ~ ', ' if first_name else '' }}<span data-i18n="home_greeting">how are you doing today?</span></div>
+            </div>
+            <div class="page-header home-header">
+                <h1 data-i18n="select_symptoms">Select Symptoms</h1>
+                <p class="subtitle" data-i18n="select_symptoms_subtitle">Please check the symptoms you are currently experiencing.</p>
+            </div>
+        </div>
+        <div class="home-hero-stats" aria-hidden="true">
+            <div class="hero-stat">
+                <strong>11</strong>
+                <span data-i18n="body_areas">body areas</span>
+            </div>
+            <div class="hero-stat">
+                <strong data-i18n="start_here_label">Start here</strong>
+                <span data-i18n="choose_symptoms_hint">choose your symptoms</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="appt-tabs home-tabs">
+        <button type="button" class="appt-tab-btn active" onclick="switchMainTab('symptoms')" id="tab-btn-symptoms" data-i18n="check_symptoms">Check Symptoms</button>
+        <button type="button" class="appt-tab-btn" onclick="switchMainTab('nearby')" id="tab-btn-nearby" data-i18n="nearby">Nearby</button>
+    </div>
+
+    <div id="tab-symptoms" class="home-tab-panel" style="display: block;">
+        <form id="symptom-form" class="symptom-form" onsubmit="submitSymptoms(event)">
+            <div class="symptom-groups">
+                {% set icons = {'head': '🙂', 'eyes': '👁️', 'ears': '👂', 'chest': '🫁', 'stomach': '🫃', 'joints': '🦴', 'urinary': '💧', 'women': '🚺', 'skin': '🖐️', 'general': '⚡', 'mental': '🧠'} %}
+                {% set labels = {'head': 'Head & Face', 'eyes': 'Eyes', 'ears': 'Ears', 'chest': 'Chest & Respiratory', 'stomach': 'Stomach & Abdomen', 'joints': 'Bones & Joints', 'urinary': 'Urinary', 'women': 'Women\'s Health', 'skin': 'Skin', 'general': 'General Body', 'mental': 'Mental Health'} %}
+
+                {% for area in ['head', 'eyes', 'ears', 'chest', 'stomach', 'joints', 'urinary', 'women', 'skin', 'general', 'mental'] %}
+                <div class="group-card home-group-card" data-area="{{ area }}">
+                    <button type="button" class="group-header" onclick="toggleGroup('{{ area }}')" aria-expanded="false">
+                        <div class="group-title">
+                            <span class="group-icon">{{ icons[area] }}</span>
+                            <div class="group-copy">
+                                <h2 class="group-label" data-i18n="{{ area }}_label">{{ labels[area] }}</h2>
+                                <span class="group-meta">{{ symptoms_group[area]|length }} <span data-i18n="symptoms_count_label">symptoms</span></span>
+                            </div>
+                        </div>
+                        <span class="chevron" id="icon-{{ area }}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </button>
+
+                    <div class="group-content" id="group-{{ area }}">
+                        <div class="symptom-list">
+                            {% for item in symptoms_group[area] %}
+                            <label class="symptom-item">
+                                <input type="checkbox" name="symptoms" value="{{ item.symptom_id }}" class="custom-checkbox">
+                                <div class="checkbox-box"></div>
+                                <span
+                                    class="symptom-name"
+                                    data-name-en="{{ item.name_en }}"
+                                    data-name-bn="{{ item.name_bn }}"
+                                    data-name-hi="{{ item.name_hi }}"
+                                >{{ item.display }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="sticky-footer home-sticky-footer">
+                <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                    <span data-i18n="next">Next</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="tab-nearby" class="home-tab-panel" style="display: none;">
+        <div class="home-nearby-card">
+            <div class="nearby-illustration">🏥</div>
+            <h3 data-i18n="nearby_hospitals">Nearby Hospitals</h3>
+            <p data-i18n="nearby_hospitals_subtitle">Government and private hospitals close to your current location.</p>
+            <div class="home-nearby-status-row">
+                <span id="home-nearby-status" class="loc-status" data-i18n="detecting">Detecting...</span>
+                <span class="nearby-pill" data-i18n="ten_results_label">10 results</span>
+            </div>
+            <div id="home-nearby-loading" class="home-nearby-loading" data-i18n="loading_hospitals">
+                Loading nearby hospitals...
+            </div>
+            <ul id="home-nearby-list" class="facility-list home-facility-list"></ul>
+        </div>
+    </div>
+
+    <a href="/wellness" class="home-wellness-card">
+        <span class="home-wellness-icon">🧠</span>
+        <div class="home-wellness-copy">
+            <div class="home-wellness-title" data-i18n="wellness_cta_title">Feeling stressed or anxious?</div>
+            <div class="home-wellness-subtitle" data-i18n="wellness_cta_sub">Check in with your mental wellness</div>
+        </div>
+        <span class="home-wellness-arrow" aria-hidden="true">→</span>
+    </a>
+</div>
+
+<script>
+function switchMainTab(tab) {
+    document.getElementById('tab-btn-symptoms').classList.remove('active');
+    document.getElementById('tab-btn-nearby').classList.remove('active');
+    document.getElementById('tab-symptoms').style.display = 'none';
+    document.getElementById('tab-nearby').style.display = 'none';
+
+    document.getElementById('tab-btn-' + tab).classList.add('active');
+    document.getElementById('tab-' + tab).style.display = 'block';
+
+    if (tab === 'nearby' && typeof loadHomeNearbyHospitals === 'function') {
+        loadHomeNearbyHospitals();
+    }
+}
+</script>
+{% endblock %}
