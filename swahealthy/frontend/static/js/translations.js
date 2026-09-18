@@ -302,7 +302,7 @@
         'seasonal_board_kicker': 'Seasonal Health Alert Board',
         'seasonal_board_title': 'Auto-updated for the current month in West Bengal',
         'this_month_label': 'This month',
-        'seasonal_in_west_bengal_suffix': 'in West Bengal',
+        'seasonal_in_ANDHRA PRADESH_suffix': 'in ANDHRAPRADESH',
         'season_window_mar_may': 'March to May',
         'season_window_jun_sep': 'June to September',
         'season_window_nov_feb': 'November to February',

@@ -1,5 +1,5 @@
 # SwaHealthy 🏥
-### Rural Health Companion for Andhra pradesh people
+### Rural Health Companion for Indian people
 
 > Multilingual symptom checker with AI health assistant, mental wellness tools, and GPS-based facility finder — in Bengali, Hindi & English. Works offline.
 
@@ -171,7 +171,7 @@ All screenshots showcase the app's key features:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/pauldev-hub/swahealthy.git
+git clone https://github.com/YadlaJahnavi/swahealthy.git
 cd swahealthy/swahealthy
 
 # 2. Install dependencies
