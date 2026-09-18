@@ -6,7 +6,7 @@
         <section class="assistant-hero-panel">
             <div class="assistant-hero-copy">
                 <span class="assistant-kicker" data-i18n="assistant_brand_kicker">SwaHealthy Assistant</span>
-                <h1 data-i18n="assistant_hero_title">Your quick health brief for West Bengal</h1>
+                <h1 data-i18n="assistant_hero_title">Your quick health brief for Andhra Pradesh</h1>
                 <p data-i18n="assistant_hero_desc">Get a saved personal risk snapshot, live seasonal warnings, and a simple body-area guide before you chat.</p>
             </div>
             <div class="assistant-hero-meta">
@@ -139,7 +139,7 @@
             <div class="assistant-section-head">
                 <div>
                     <span class="assistant-section-kicker" data-i18n="seasonal_board_kicker">Seasonal Health Alert Board</span>
-                    <h4 data-i18n="seasonal_board_title">Auto-updated for the current month in West Bengal</h4>
+                    <h4 data-i18n="seasonal_board_title">Auto-updated for the current month in Andhra Pradesh</h4>
                 </div>
                 <span class="assistant-section-badge" id="assistant-season-month" data-i18n="this_month_label">This month</span>
             </div>
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var monthName = now.toLocaleString(locale, { month: 'long' });
         var selected = seasonalAlerts[0];
         seasonalAlerts.forEach(function (entry) { if (entry.months.indexOf(month) !== -1) selected = entry; });
-        seasonMonth.textContent = monthName + ' ' + tr('seasonal_in_west_bengal_suffix');
+        seasonMonth.textContent = monthName + ' ' + tr('seasonal_in_andhra_pradesh_suffix');
         seasonGrid.innerHTML = selected.items.map(function (item, index) {
             return '<article class="seasonal-alert-card"><span class="seasonal-alert-index">0' + (index + 1) + '</span><h5>' + tr(item.titleKey) + '</h5><p>' + tr(item.tipKey) + '</p><span class="seasonal-alert-window">' + tr(selected.labelKey) + '</span></article>';
         }).join('');

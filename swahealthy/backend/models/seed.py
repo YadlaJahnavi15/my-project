@@ -222,18 +222,24 @@ def seed_data(cursor):
 
     # ── 10 Facilities ───────────────────────────────────────────────────
     facilities = [
-        ("Kolkata Medical College", "Hospital", "Kolkata", 22.5735, 88.3629, "+91 33 2212 3000"),
-        ("NRS Medical College", "Hospital", "Kolkata", 22.5645, 88.3683, "+91 33 2286 0033"),
-        ("SSKM Hospital", "Hospital", "Kolkata", 22.5395, 88.3444, "+91 33 2204 1100"),
-        ("Howrah District Hospital", "Hospital", "Howrah", 22.5800, 88.3299, "+91 33 2641 3400"),
-        ("Salt Lake SD Hospital", "Hospital", "North 24 Parganas", 22.5866, 88.4116, "+91 33 2321 2323"),
-        ("Barasat District Hospital", "Hospital", "North 24 Parganas", 22.7214, 88.4735, "+91 33 2552 2011"),
-        ("Dum Dum Municipal Hospital", "Hospital", "North 24 Parganas", 22.6241, 88.4187, "+91 33 2551 3241"),
-        ("Jan Aushadhi Kendra (Sealdah)", "Jan Aushadhi", "Kolkata", 22.5694, 88.3713, "N/A"),
-        ("Bidhannagar State General Hospital", "PHC", "North 24 Parganas", 22.5937, 88.4206, "N/A"),
-        ("Bardhaman Medical College", "Hospital", "Bardhaman", 23.2393, 87.8512, "N/A"),
-    ]
-
+    ("Government General Hospital, Srikakulam", "Hospital", "Srikakulam", 18.2969, 83.8978, "N/A"),
+    ("King George Hospital", "Hospital", "Visakhapatnam", 17.7100, 83.3030, "9849903060"),
+    ("Government General Hospital, Kakinada", "Hospital", "Kakinada", 16.9891, 82.2475, "N/A"),
+    ("Government General Hospital, Vijayawada", "Hospital", "Vijayawada", 16.5193, 80.6305, "N/A"),
+    ("Government General Hospital, Guntur", "Hospital", "Guntur", 16.3067, 80.4365, "N/A"),
+    ("Government General Hospital, Ongole", "Hospital", "Ongole", 15.5057, 80.0499, "N/A"),
+    ("DSR Government General Hospital", "Hospital", "Nellore", 14.4426, 79.9865, "N/A"),
+    ("Government General Hospital, Kadapa", "Hospital", "Kadapa", 14.4674, 78.8241, "N/A"),
+    ("Government General Hospital, Kurnool", "Hospital", "Kurnool", 15.8281, 78.0373, "N/A"),
+    ("SVRRG General Hospital", "Hospital", "Tirupati", 13.6288, 79.4192, "N/A"),
+    ("Government General Hospital, Anantapur", "Hospital", "Anantapur", 14.6819, 77.6006, "N/A"),
+    ("Government General Hospital, Vizianagaram", "Hospital", "Vizianagaram", 18.1067, 83.3956, "N/A"),
+    ("Government General Hospital, Rajamahendravaram", "Hospital", "Rajamahendravaram", 16.9891, 81.7840, "N/A"),
+    ("Government General Hospital, Eluru", "Hospital", "Eluru", 16.7107, 81.0952, "N/A"),
+    ("Government General Hospital, Machilipatnam", "Hospital", "Machilipatnam", 16.1875, 81.1389, "N/A"),
+    ("Government General Hospital, Nandyal", "Hospital", "Nandyal", 15.4786, 78.4836, "N/A"),
+    ("Government General Hospital, Mangalagiri", "Hospital", "Mangalagiri", 16.4308, 80.5680, "N/A"),
+]
     for f in facilities:
         cursor.execute(
             "INSERT INTO facilities (name, type, district, latitude, longitude, contact) VALUES (?, ?, ?, ?, ?, ?)", f
@@ -241,7 +247,7 @@ def seed_data(cursor):
 
 
 def seed_doctors(cursor):
-    """Seed sample West Bengal doctors."""
+    """Seed sample Andhra Pradesh doctors."""
     doctors = [
         ("Dr. Arindam Mukherjee", "Cardiologist",
          json.dumps(["Mon", "Wed", "Fri"]),
@@ -381,13 +387,18 @@ def seed_medicines(cursor):
     cursor.execute("SELECT facility_id FROM facilities WHERE type IN ('Jan Aushadhi', 'Pharmacy')")
     pharma_facilities = [row['facility_id'] for row in cursor.fetchall()]
 
-    if len(pharma_facilities) < 2:
-        extra_pharma = [
-            ("Jan Aushadhi Kendra (Salt Lake)", "Jan Aushadhi", "North 24 Parganas", 22.5870, 88.4130, "N/A"),
-            ("Jan Aushadhi Kendra (Howrah)", "Jan Aushadhi", "Howrah", 22.5810, 88.3280, "N/A"),
-            ("Jan Aushadhi Kendra (Dum Dum)", "Jan Aushadhi", "North 24 Parganas", 22.6250, 88.4200, "N/A"),
-        ]
-        for f in extra_pharma:
+if len(pharma_facilities) < 2:
+    extra_pharma = [
+        ("Jan Aushadhi Kendra (Visakhapatnam)", "Jan Aushadhi", "Visakhapatnam", 17.6868, 83.2185, "N/A"),
+        ("Jan Aushadhi Kendra (Vijayawada)", "Jan Aushadhi", "Vijayawada", 16.5062, 80.6480, "N/A"),
+        ("Jan Aushadhi Kendra (Guntur)", "Jan Aushadhi", "Guntur", 16.3067, 80.4365, "N/A"),
+        ("Jan Aushadhi Kendra (Kakinada)", "Jan Aushadhi", "Kakinada", 16.9891, 82.2475, "N/A"),
+        ("Jan Aushadhi Kendra (Tirupati)", "Jan Aushadhi", "Tirupati", 13.6288, 79.4192, "N/A"),
+        ("Jan Aushadhi Kendra (Nellore)", "Jan Aushadhi", "Nellore", 14.4426, 79.9865, "N/A"),
+        ("Jan Aushadhi Kendra (Kurnool)", "Jan Aushadhi", "Kurnool", 15.8281, 78.0373, "N/A"),
+        ("Jan Aushadhi Kendra (Kadapa)", "Jan Aushadhi", "Kadapa", 14.4674, 78.8241, "N/A"),
+    ]
+    for f in extra_pharma:
             cursor.execute(
                 "INSERT OR IGNORE INTO facilities (name, type, district, latitude, longitude, contact) VALUES (?, ?, ?, ?, ?, ?)", f
             )

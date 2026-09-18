@@ -112,6 +112,7 @@
         'lang_english': 'English',
         'lang_bangla': 'Bangla',
         'lang_hindi': 'Hindi',
+        'lang_telugu': 'Telugu',
         'view_summary': 'View Summary',
         'view_details': 'View Details →',
         'clear_history': 'Clear All History',
@@ -1231,4 +1232,261 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     window.translations = translations;
     window.APPT_LOCALE = APPT_LOCALE;
+}
+'te': {
+    // Navigation & Base
+    'history': 'చరిత్ర',
+    'appointments': 'అపాయింట్‌మెంట్లు',
+    'ai_analysis': 'AI విశ్లేషణ',
+    'login': 'లాగిన్',
+    'emergency_contacts': 'అత్యవసర సంప్రదింపులు',
+    'ambulance': 'అంబులెన్స్ / MSVS',
+    'police': 'పోలీసు',
+    'national_emergency': 'జాతీయ అత్యవసర సేవ',
+    'women_helpline': 'మహిళల హెల్ప్‌లైన్',
+    'close': 'మూసివేయండి',
+    'logout': 'లాగ్ అవుట్',
+    'my_profile': 'నా ప్రొఫైల్',
+    'home': 'హోమ్',
+    'profile': 'ప్రొఫైల్',
+
+    'high_severity_alert':
+        '⚠ అధిక తీవ్రత గుర్తించబడింది. అవసరమైతే అత్యవసర సేవలకు కాల్ చేయండి.',
+
+    // Profile
+    'profile_title': 'నా ఆరోగ్య ప్రొఫైల్',
+    'profile_subtitle':
+        'మరింత వ్యక్తిగతీకరించిన ఆరోగ్య సమాచారం కోసం మీ వయస్సు మరియు లింగాన్ని నమోదు చేయండి.',
+    'age_label': 'మీ వయస్సు',
+    'gender_label': 'లింగం',
+    'male': 'పురుషుడు',
+    'female': 'స్త్రీ',
+    'other': 'ఇతర',
+    'prefer_not_to_say': 'చెప్పకూడదనుకుంటున్నాను',
+    'save_profile': 'ప్రొఫైల్‌ను సేవ్ చేయండి',
+    'profile_saved': 'ప్రొఫైల్ విజయవంతంగా సేవ్ చేయబడింది!',
+
+    // Home
+    'select_symptoms': 'లక్షణాలను ఎంచుకోండి',
+    'select_symptoms_subtitle':
+        'మీకు ప్రస్తుతం ఉన్న లక్షణాలను ఎంచుకోండి.',
+    'daily_health_check': 'రోజువారీ ఆరోగ్య తనిఖీ',
+    'check_in': 'చెక్-ఇన్',
+    'home_greeting': 'ఈరోజు మీరు ఎలా ఉన్నారు?',
+    'start_here_label': 'ఇక్కడ ప్రారంభించండి',
+    'choose_symptoms_hint': 'మీ లక్షణాలను ఎంచుకోండి',
+    'ai_photo': 'AI ఫోటో',
+    'check_symptoms': 'లక్షణాలను తనిఖీ చేయండి',
+    'nearby': 'సమీపంలో',
+    'next': 'తర్వాత',
+
+    'head_label': 'తల & ముఖం',
+    'chest_label': 'ఛాతీ & శ్వాస',
+    'stomach_label': 'కడుపు & ఉదరం',
+    'general_label': 'సాధారణ శరీరం',
+    'skin_label': 'చర్మం',
+    'eyes_label': 'కళ్ళు',
+    'ears_label': 'చెవులు',
+    'joints_label': 'ఎముకలు & కీళ్లు',
+    'urinary_label': 'మూత్ర సంబంధిత',
+    'women_label': 'మహిళల ఆరోగ్యం',
+    'mental_label': 'మానసిక ఆరోగ్యం',
+    'symptoms_count_label': 'లక్షణాలు',
+
+    'duration_question': 'ఈ లక్షణాలు మీకు ఎంతకాలంగా ఉన్నాయి?',
+    'duration_less_1': '< 1 రోజు',
+    'duration_1_3': '1–3 రోజులు',
+    'duration_4_7': '4–7 రోజులు',
+    'duration_7_plus': '7+ రోజులు',
+
+    // Results
+    'analyzing_symptoms': 'లక్షణాలను విశ్లేషిస్తోంది...',
+    'visible_symptom': 'కనిపించే లక్షణం ఉందా?',
+    'ai_photo_cta':
+        'తక్షణ దృశ్య అంచనా కోసం మా కొత్త AI ఫోటో విశ్లేషణ సాధనాన్ని ప్రయత్నించండి.',
+    'try_ai_analysis': 'AI విశ్లేషణను ప్రయత్నించండి',
+    'diagnosis_result': 'నిర్ధారణ ఫలితం',
+    'result_description':
+        'మీ లక్షణాలు ఈ పరిస్థితికి సరిపోవచ్చని సూచిస్తున్నాయి. సిఫార్సు చేసిన ప్రథమ చికిత్స చర్యలను జాగ్రత్తగా చదవండి.',
+    'recommended_see_doctor': 'సిఫార్సు: వైద్యుడిని సంప్రదించండి',
+    'recommended_see_doctor_text':
+        'లక్షణాలు కొన్ని రోజుల కంటే ఎక్కువ కొనసాగినా లేదా తీవ్రమైనా వైద్య సహాయం పొందండి.',
+    'emergency': 'అత్యవసరం',
+    'first_aid_steps': 'ప్రథమ చికిత్స చర్యలు',
+
+    'nearby_aushadhi': 'సమీపంలోని జన ఔషధి',
+    'nearby_facilities': 'సమీపంలోని సౌకర్యాలు',
+    'nearby_hospitals': 'సమీపంలోని ఆసుపత్రులు',
+    'nearby_hospitals_subtitle':
+        'మీ ప్రస్తుత ప్రాంతానికి సమీపంలోని ప్రభుత్వ మరియు ప్రైవేట్ ఆసుపత్రులు.',
+    'loading_hospitals': 'సమీపంలోని ఆసుపత్రులను లోడ్ చేస్తోంది...',
+    'no_hospitals_found': 'సమీపంలో ఆసుపత్రులు కనుగొనబడలేదు',
+
+    'recommended_medicines': 'సిఫార్సు చేసిన మందులు',
+    'aushadhi_subtitle':
+        'మీ పరిస్థితికి సంబంధించిన OTC మందులు అందుబాటులో ఉన్న జన ఔషధి కేంద్రాలు',
+
+    'detecting': 'గుర్తిస్తోంది...',
+    'location_detected': 'ప్రాంతం గుర్తించబడింది',
+    'location_denied': 'ప్రాంత అనుమతి నిరాకరించబడింది',
+    'location_unsupported': 'ప్రాంత సమాచారం అందుబాటులో లేదు',
+
+    'locate_on_map': 'మ్యాప్‌లో గుర్తించండి',
+    'no_aushadhi_found':
+        'మీ పరిస్థితికి సంబంధించిన OTC మందులు ఉన్న సమీప జన ఔషధి కేంద్రాలు కనుగొనబడలేదు.',
+
+    'cta_title': 'వైద్య సంప్రదింపు అవసరమా?',
+    'cta_msg': 'ఇప్పుడే నిపుణుడితో అపాయింట్‌మెంట్ బుక్ చేసుకోండి.',
+
+    'alternative_possibilities': 'ఇతర సాధ్యమైన పరిస్థితులు',
+    'medical_disclaimer': 'వైద్య నిరాకరణ',
+    'medical_disclaimer_text':
+        'SwaHealthy అందించే సమాచారం విద్యా ప్రయోజనాల కోసం మాత్రమే. ఇది వృత్తిపరమైన వైద్య సలహా, నిర్ధారణ లేదా చికిత్సకు ప్రత్యామ్నాయం కాదు.',
+
+    'history_button': 'చరిత్ర',
+    'check_again_button': 'మళ్లీ తనిఖీ చేయండి',
+    'low_severity': 'తక్కువ తీవ్రత',
+    'medium_severity': 'మధ్యస్థ తీవ్రత',
+    'high_severity': 'అధిక తీవ్రత',
+    'no_otc_meds':
+        'ఈ పరిస్థితికి OTC మందుల సూచనలు అందుబాటులో లేవు.',
+    'save_summary': 'సారాంశాన్ని సేవ్ చేయండి',
+
+    // History
+    'your_history': 'మీ చరిత్ర',
+    'history_title': 'చరిత్ర',
+    'symptoms_label': '📋 లక్షణాలు:',
+    'language_label': 'భాష:',
+    'lang_english': 'ఇంగ్లీష్',
+    'lang_bangla': 'బెంగాలీ',
+    'lang_hindi': 'హిందీ',
+    'lang_telugu': 'తెలుగు',
+    'view_summary': 'సారాంశాన్ని చూడండి',
+    'view_details': 'వివరాలను చూడండి →',
+    'clear_history': 'మొత్తం చరిత్రను తొలగించండి',
+    'no_history': 'చరిత్ర ఏదీ కనుగొనబడలేదు',
+    'no_history_subtitle':
+        'మీ గత ఆరోగ్య తనిఖీ ఫలితాలు ఇక్కడ కనిపిస్తాయి.',
+    'check_symptoms_today': 'ఈరోజు లక్షణాలను తనిఖీ చేయండి',
+    'confirm_clear_history':
+        'మీరు మొత్తం చరిత్రను తొలగించాలనుకుంటున్నారా?',
+
+    // Patient Summary
+    'patient_medical_summary': 'రోగి వైద్య సారాంశం',
+    'diagnosis': 'నిర్ధారణ',
+    'prescriptions_care': 'మందులు & సంరక్షణ',
+    'medical_notes': 'వైద్య గమనికలు',
+    'health_tips': 'ఆరోగ్య సూచనలు',
+    'disclaimer': 'నిరాకరణ',
+    'print': 'ప్రింట్',
+    'save_pdf': 'PDF సేవ్ చేయండి',
+    'share': 'షేర్ చేయండి',
+    'age_word': 'వయస్సు',
+    'gender_word': 'లింగం',
+    'not_set': 'సెట్ చేయలేదు',
+
+    // AI Analysis
+    'ai_analysis_title': 'AI ఫోటో విశ్లేషణ',
+    'ai_instruction':
+        'దద్దుర్లు, గాయం లేదా వాపు వంటి కనిపించే లక్షణం ఉందా? తక్షణ AI విశ్లేషణ కోసం స్పష్టమైన ఫోటోను అప్‌లోడ్ చేయండి.',
+    'tap_to_upload': 'ఫోటోను ఎంచుకోవడానికి లేదా తీయడానికి ట్యాప్ చేయండి',
+    'upload_hint': 'JPG/PNG గరిష్టంగా 2MB',
+    'remove_photo': 'ఫోటోను తొలగించండి',
+    'analyze_photo_button': 'ఫోటోను విశ్లేషించండి',
+    'analyzing_ai': 'AIతో ఫోటోను విశ్లేషిస్తోంది...',
+    'analysis_results': 'విశ్లేషణ ఫలితాలు',
+    'observed': 'గమనించినది:',
+    'possible_matches': 'సాధ్యమైన పరిస్థితులు:',
+    'low_urgency': 'తక్కువ అత్యవసరం',
+    'moderate_urgency': 'మధ్యస్థ అత్యవసరం',
+    'high_urgency': 'అధిక అత్యవసరం',
+    'very_high_urgency': 'చాలా అధిక అత్యవసరం',
+    'ai_disclaimer':
+        'గమనిక: ఈ దృశ్య అంచనా AI మోడల్ ద్వారా రూపొందించబడింది. ఇది ఖచ్చితమైన వైద్య నిర్ధారణ కాదు.',
+    'analyze_another': 'మరో ఫోటోను విశ్లేషించండి',
+    'select_photo_first': 'దయచేసి ముందుగా ఒక ఫోటోను ఎంచుకోండి.',
+
+    // Appointments
+    'appointments_title': 'డాక్టర్ అపాయింట్‌మెంట్లు',
+    'appointments_subtitle':
+        'కొత్త సంప్రదింపులను బుక్ చేయండి లేదా మీ రాబోయే వైద్య అపాయింట్‌మెంట్లను చూడండి.',
+    'book_appointment': '📋 అపాయింట్‌మెంట్ బుక్ చేయండి',
+    'my_appointments': '📂 నా అపాయింట్‌మెంట్లు',
+    'select_specialist': 'నిపుణుడిని ఎంచుకోండి',
+    'preferred_date': 'తేదీ & సమయాన్ని ఎంచుకోండి',
+    'full_name': 'పూర్తి పేరు',
+    'phone_number': 'మొబైల్ నంబర్',
+    'reason_for_visit': 'సందర్శన కారణం',
+    'confirm_booking': 'బుకింగ్‌ను నిర్ధారించండి',
+    'loading': 'లోడ్ అవుతోంది...',
+    'refresh': 'రిఫ్రెష్',
+    'request_submitted': 'అభ్యర్థన సమర్పించబడింది',
+    'done': 'పూర్తయింది',
+    'cancel': 'రద్దు చేయండి',
+    'cancelling': 'రద్దు చేస్తోంది...',
+    'confirm_cancel': 'ఈ అపాయింట్‌మెంట్‌ను రద్దు చేయాలా?',
+    'status_pending': 'పెండింగ్',
+    'status_confirmed': 'నిర్ధారించబడింది',
+    'status_cancelled': 'రద్దు చేయబడింది',
+
+    // Assistant
+    'swa_assistant_title': 'SwaHealthy సహాయకుడు',
+    'features_tab': 'ఫీచర్లు',
+    'chat_tab': 'చాట్',
+    'loading_tip': 'సూచనను లోడ్ చేస్తోంది...',
+    'ask_health_questions': 'ఆరోగ్య ప్రశ్నలు అడగండి',
+    'ai_powered_guidance': 'AI ఆధారిత మార్గదర్శకత్వం',
+    'photo_analysis_short': 'ఫోటో విశ్లేషణ',
+    'upload_visual_check': 'దృశ్య తనిఖీ కోసం అప్‌లోడ్ చేయండి',
+    'find_facilities': 'సౌకర్యాలను కనుగొనండి',
+    'medicine_info': 'మందుల సమాచారం',
+    'ask_about_any_medicine': 'ఏదైనా మందు గురించి అడగండి',
+    'my_health_history': 'నా ఆరోగ్య చరిత్ర',
+    'past_check_results': 'గత తనిఖీ ఫలితాలు',
+    'how_are_you_feeling': 'మీకు ఎలా అనిపిస్తోంది?',
+    'feeling_great': 'చాలా బాగుంది',
+    'feeling_okay': 'పర్వాలేదు',
+    'feeling_unwell': 'బాగోలేదు',
+    'ask_about_health_placeholder': 'ఆరోగ్యం గురించి అడగండి...',
+    'clear_chat': 'చాట్‌ను క్లియర్ చేయండి',
+    'clear_chat_confirm': 'చాట్ చరిత్రను క్లియర్ చేయాలా?',
+    'couldnt_connect_try_again':
+        'కనెక్ట్ కాలేకపోయింది. దయచేసి మళ్లీ ప్రయత్నించండి.',
+
+    // Wellness
+    'wellness_title': 'మానసిక ఆరోగ్యం',
+    'wellness_hero_title': 'మీ సురక్షిత స్థలం 💙',
+    'wellness_hero_sub':
+        'ప్రతిరోజూ చెక్-ఇన్ చేయండి, మిమ్మల్ని మీరు బాగా అర్థం చేసుకోండి మరియు అవసరమైనప్పుడు సహాయం పొందండి.',
+    'chat_placeholder': 'ఈరోజు మీకు ఎలా అనిపిస్తోంది?',
+    'chat_send': 'పంపండి',
+    'chat_close': '✕ చాట్ మూసివేయండి',
+    'tab_checkin': 'చెక్-ఇన్',
+    'tab_assess': 'అంచనా',
+    'tab_tips': 'సూచనలు',
+    'tab_summary': 'సారాంశం',
+    'todays_mood': 'ఈరోజు మూడ్',
+    'mood_sad': 'విచారం',
+    'mood_low': 'తక్కువగా ఉంది',
+    'mood_okay': 'పర్వాలేదు',
+    'mood_good': 'బాగుంది',
+    'mood_great': 'చాలా బాగుంది',
+    'this_week': 'ఈ వారం',
+    'reflection_title': 'ఈరోజు ఆలోచనలు ✨',
+    'reflection_placeholder': 'మీ ఆలోచనలను ఇక్కడ రాయండి...',
+    'btn_skip': 'దాటవేయండి',
+    'btn_save': 'సేవ్ చేయండి ✓',
+    'reflection_saved': '✓ ఆలోచన సేవ్ చేయబడింది',
+    'yesterday_reflection': 'నిన్నటి ఆలోచనలు',
+
+    'tips_breathing': '🫁 4-7-8 శ్వాస వ్యాయామం',
+    'breath_label': '4 సెకన్లు శ్వాస తీసుకోండి · 7 సెకన్లు ఆపండి · 8 సెకన్లు వదలండి',
+    'breath_sub': 'మనసును ప్రశాంతంగా చేయడానికి 4 సార్లు చేయండి',
+    'breath_start': '▶ శ్వాస ప్రారంభించండి',
+    'breath_stop': '⏹ ఆపండి',
+    'tips_grounding': '🌱 5-4-3-2-1 గ్రౌండింగ్',
+    'tips_sleep': '😴 నిద్ర సూచనలు',
+    'summary_title': 'మీ వారపు ఆరోగ్య సారాంశం',
+    'summary_sub': 'చెక్-ఇన్‌లు, అంచనాలు & ఆలోచనల ఆధారంగా రూపొందించబడింది',
+    'need_help': 'సహాయం కావాలా? 💙'
 }

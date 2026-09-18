@@ -1363,7 +1363,7 @@
 
     function renderDashboard(age, gender, phone, checkCount, hasPhoto, languageCode) {
         const completion = getCompletionPercentage(age, gender, phone, hasPhoto);
-        const langMap = { en: 'English', bn: 'Bangla', hi: 'Hindi' };
+        const langMap = { en: 'English', bn: 'Bangla', hi: 'Hindi',Te: 'Telugu' };
         const updatedAt = localStorage.getItem(PROFILE_UPDATED_KEY);
 
         setMetricText('stat-checks', String(checkCount));
@@ -1596,7 +1596,7 @@
             if (key === 'app info') {
                 value.classList.add('profile-about-stack');
                 value.innerHTML = `
-                    <span>Multilingual symptom guidance for West Bengal, built to stay lightweight and accessible.</span>
+                    <span>Multilingual symptom guidance for Andhra Pradesh, built to stay lightweight and accessible.</span>
                     <a href="https://github.com/YadlaJahnavi15/Swahealthy" class="profile-about-text-link" target="_blank" rel="noopener noreferrer">Read more on GitHub</a>
                 `;
             }

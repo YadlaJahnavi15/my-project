@@ -56,8 +56,25 @@ PHOTO_ANALYSIS_TEXT = {
         "service_recommendation": "थोड़ी देर बाद फिर कोशिश करें।",
         "instruction_language": "observed, possible_conditions और recommendation पूरी तरह हिंदी में दें।",
         "instruction_unclear": 'यदि छवि स्पष्ट नहीं है, तो observed में "छवि स्पष्ट नहीं है" लिखें, urgency "low" रखें, और अधिक साफ़ तस्वीर की सलाह दें।',
-    }
-}
+    },
+    "te": {
+         "demo_observed": "డెమో మోడ్: బాహ్య AI సేవ ప్రస్తుతం అందుబాటులో లేదు, కాబట్టి ఇది UI పరీక్ష కోసం నమూనా దృశ్య విశ్లేషణ మాత్రమే.",
+         "demo_conditions": ["పొడి చర్మం", "సంపర్కం వల్ల కలిగే చికాకు", "ఎగ్జిమా"],
+         "demo_recommendation": "ఇది కేవలం డెమో మోడ్ మాత్రమే. లైవ్ AI విశ్లేషణ అమలు కాలేదు ({reason}). అప్‌లోడ్, ప్రివ్యూ మరియు ఫలితాల UI పనిచేస్తున్నాయి, కానీ ఇది నిజమైన వైద్య మూల్యాంకనం కాదు.",
+         "missing_key_observed": "API key అందుబాటులో లేదు. దయచేసి మీ .env ఫైల్‌లో OPENROUTER_API_KEY ను సెట్ చేయండి.",
+         "missing_key_recommendation": "ఉచిత OpenRouter API key పొందండి",
+         "no_image_observed": "ఎటువంటి ఇమేజ్ డేటా అందించబడలేదు.",
+         "no_image_recommendation": "స్పష్టమైన చిత్రాన్ని అప్‌లోడ్ చేసి మళ్లీ ప్రయత్నించండి.",
+         "rate_limit_observed": "AI సేవ యొక్క అభ్యర్థన పరిమితి పూర్తయింది. దయచేసి ఒక నిమిషం తర్వాత మళ్లీ ప్రయత్నించండి.",
+         "rate_limit_recommendation": "అంతవరకు అంతర్నిర్మిత symptom checker ను ఉపయోగించండి.",
+         "auth_observed": "దయచేసి .env లోని OPENROUTER_API_KEY ను తనిఖీ చేయండి.",
+         "auth_recommendation": "చెల్లుబాటు అయ్యే key తీసుకుని యాప్‌ను మళ్లీ ప్రారంభించండి.",
+         "service_observed": "AI సేవ నుండి స్పందన రాలేదు.",
+         "service_recommendation": "కొంత సమయం తర్వాత మళ్లీ ప్రయత్నించండి.",
+         "instruction_language": "observed, possible_conditions మరియు recommendation ను పూర్తిగా తెలుగులో ఇవ్వండి.",
+         "instruction_unclear": 'చిత్రం స్పష్టంగా లేకపోతే, observed లో "చిత్రం స్పష్టంగా లేదు" అని రాయండి, urgency ను "low" గా ఉంచండి మరియు మరింత స్పష్టమైన చిత్రాన్ని అప్‌లోడ్ చేయమని సూచించండి.',
+            }
+     }
 
 
 def _lang_pack(language):
