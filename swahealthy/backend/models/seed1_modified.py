@@ -387,32 +387,43 @@ def seed_medicines(cursor):
     cursor.execute("SELECT facility_id FROM facilities WHERE type IN ('Jan Aushadhi', 'Pharmacy')")
     pharma_facilities = [row['facility_id'] for row in cursor.fetchall()]
 
-if len(pharma_facilities) < 2:
-    extra_pharma = [
-        ("Jan Aushadhi Kendra (Visakhapatnam)", "Jan Aushadhi", "Visakhapatnam", 17.6868, 83.2185, "N/A"),
-        ("Jan Aushadhi Kendra (Vijayawada)", "Jan Aushadhi", "Vijayawada", 16.5062, 80.6480, "N/A"),
-        ("Jan Aushadhi Kendra (Guntur)", "Jan Aushadhi", "Guntur", 16.3067, 80.4365, "N/A"),
-        ("Jan Aushadhi Kendra (Kakinada)", "Jan Aushadhi", "Kakinada", 16.9891, 82.2475, "N/A"),
-        ("Jan Aushadhi Kendra (Tirupati)", "Jan Aushadhi", "Tirupati", 13.6288, 79.4192, "N/A"),
-        ("Jan Aushadhi Kendra (Nellore)", "Jan Aushadhi", "Nellore", 14.4426, 79.9865, "N/A"),
-        ("Jan Aushadhi Kendra (Kurnool)", "Jan Aushadhi", "Kurnool", 15.8281, 78.0373, "N/A"),
-        ("Jan Aushadhi Kendra (Kadapa)", "Jan Aushadhi", "Kadapa", 14.4674, 78.8241, "N/A"),
-    ]
-    for f in extra_pharma:
-            cursor.execute(
-                "INSERT OR IGNORE INTO facilities (name, type, district, latitude, longitude, contact) VALUES (?, ?, ?, ?, ?, ?)", f
-            )
-            cursor.execute("SELECT facility_id FROM facilities WHERE name = ?", (f[0],))
-            row = cursor.fetchone()
-            if row:
-                pharma_facilities.append(row['facility_id'])
+    if len(pharma_facilities) < 2:
+        extra_pharma = [
+            ("Jan Aushadhi Kendra (Visakhapatnam)", "Jan Aushadhi", "Visakhapatnam", 17.6868, 83.2185, "N/A"),
+            ("Jan Aushadhi Kendra (Vijayawada)", "Jan Aushadhi", "Vijayawada", 16.5062, 80.6480, "N/A"),
+            ("Jan Aushadhi Kendra (Guntur)", "Jan Aushadhi", "Guntur", 16.3067, 80.4365, "N/A"),
+            ("Jan Aushadhi Kendra (Kakinada)", "Jan Aushadhi", "Kakinada", 16.9891, 82.2475, "N/A"),
+            ("Jan Aushadhi Kendra (Tirupati)", "Jan Aushadhi", "Tirupati", 13.6288, 79.4192, "N/A"),
+            ("Jan Aushadhi Kendra (Nellore)", "Jan Aushadhi", "Nellore", 14.4426, 79.9865, "N/A"),
+            ("Jan Aushadhi Kendra (Kurnool)", "Jan Aushadhi", "Kurnool", 15.8281, 78.0373, "N/A"),
+            ("Jan Aushadhi Kendra (Kadapa)", "Jan Aushadhi", "Kadapa", 14.4674, 78.8241, "N/A"),
+        ]
 
-    for fac_id in pharma_facilities:
-        for med_id in med_ids:
+        for f in extra_pharma:
             cursor.execute(
-                "INSERT OR IGNORE INTO facility_medicines (facility_id, medicine_id) VALUES (?, ?)",
-                (fac_id, med_id),
+                "INSERT OR IGNORE INTO facilities "
+                "(name, type, district, latitude, longitude, contact) "
+                "VALUES (?, ?, ?, ?, ?, ?)",
+                f,
             )
+
+            cursor.execute(
+                "SELECT facility_id FROM facilities WHERE name = ?",
+                (f[0],),
+            )
+
+            row = cursor.fetchone()
+
+            if row:
+                pharma_facilities.append(row["facility_id"])
+
+        for fac_id in pharma_facilities:
+            for med_id in med_ids:
+                cursor.execute(
+                    "INSERT OR IGNORE INTO facility_medicines "
+                    "(facility_id, medicine_id) VALUES (?, ?)",
+                    (fac_id, med_id),
+                )
 
 
 def refresh_medicine_seed(cursor):
